@@ -19,6 +19,7 @@ const Home = () => {
     const [times, setTimes] = useState(0)
     const [finish, setFinish] = useState(false)
 
+    /*eslint-disable */
     useEffect(() => {
         setup()
         
@@ -36,6 +37,8 @@ const Home = () => {
             }
         }
     }, [capital])
+
+    /*eslint-enable */
 
     useEffect(() => {
         times === 5 ? setFinish(true) : setFinish(false)

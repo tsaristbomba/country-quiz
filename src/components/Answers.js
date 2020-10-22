@@ -14,9 +14,11 @@ const Answers = ({ country, setCount, count, setup, times, setTimes }) => {
     const [data, setData] = useState([])
     const [isDisabled, setDisabled] = useState(false)
 
+    /*eslint-disable */
     useEffect(() => {
         setupAnswers()
     }, [country])
+    /*eslint-enable */
 
     function region() {
         return regions[_.random(0, regions.length - 1)]
