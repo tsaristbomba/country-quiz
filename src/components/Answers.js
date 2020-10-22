@@ -6,6 +6,7 @@ import regions from "../data/regions.json"
 
 const Answers = ({ country, setCount, count, setup, times, setTimes }) => {
     const [data, setData] = useState([])
+    const [isDisabled, setDisabled] = useState(false)
 
     useEffect(() => {
         setupAnswers()
@@ -55,8 +56,7 @@ const Answers = ({ country, setCount, count, setup, times, setTimes }) => {
         if(e.target.value === country) {
             setCount(count + 1)
         }
-        setTimes(times + 1)
-        setup()
+        setDisabled(true)
     }
 
     console.log(count)
@@ -66,9 +66,14 @@ const Answers = ({ country, setCount, count, setup, times, setTimes }) => {
             <div>
                 <ul>
                     {data.length !== 0 && data.map((name, k) => 
-                        <li key={k}><button onClick={(e) => handleClick(e)} value={name}>{name}</button></li>
+                        <li key={k}><button onClick={(e) => handleClick(e)} value={name} disabled={isDisabled}>{name}</button></li>
                     )}
                 </ul>
+                <button disabled={!isDisabled} onClick={() => {
+                    setup()
+                    setDisabled(false)
+                    setTimes(times + 1)
+                }}>Next</button>
             </div>
         </div>
     )
