@@ -3,9 +3,9 @@
     padding: 5px;
 }
 
-.container {
-    width: 300px;
-
+h4 {
+  font-family: Nunito;
+  padding: 10px;
 }
 
 .next {
@@ -15,7 +15,7 @@
     padding: 6px 12px;
     color: white;
     border-radius: 6px;
-  font-family: Nunito;
+  font-family: Work Sans light;
   cursor: pointer;
 }
 

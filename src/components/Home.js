@@ -106,7 +106,7 @@ const Home = () => {
             setTimes={setTimes}
             times={times} />}
             {finish && <div>
-                You got {count} Points!<br />
+                You got {count} Point(s)!<br />
                 <button className="next" onClick={() => window.location.reload()}>Try again</button>
                 </div>}
         </div>
