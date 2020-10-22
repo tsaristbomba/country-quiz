@@ -6,14 +6,14 @@ const Capital = ({ capital, loading, loadIcon }) => {
 
     return (
         <div>
-            <h3>
+            <h4>
                 {
                     !loading && capital 
                 } 
                 {
-                    !loading ? questions[0] : <img src={loadIcon} alt="loading" />
+                    !loading ? questions[0] : <img style={{width: '30px'}} src={loadIcon} alt="loading" />
                 }
-            </h3>
+            </h4>
         </div>
     )
 }

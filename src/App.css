@@ -1,4 +1,19 @@
+#root {
+  height: 100vh;
+  display: flex;
+  background-color: #FDC1C5;
+}
+
 .App {
   text-align: center;
-  font-family: Nunito;
+  font-family: Nunito light;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  align-self: center;
+  padding: 15px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }

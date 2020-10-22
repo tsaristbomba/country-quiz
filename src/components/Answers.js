@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react"
 
+// Bootstrap
+import ListGroup from "react-bootstrap/ListGroup"
+import Button from "react-bootstrap/Button"
+
 import _ from "lodash"
 
 import regions from "../data/regions.json"
+
+import "./Answers.css"
 
 const Answers = ({ country, setCount, count, setup, times, setTimes }) => {
     const [data, setData] = useState([])
@@ -46,15 +52,19 @@ const Answers = ({ country, setCount, count, setup, times, setTimes }) => {
         if(country !== null) {
             arr.push(country)
 
-            _.shuffle(arr)
+            let newArr = _.shuffle(arr)
 
-            setData(arr)
+            setData(newArr)
         }
     }
 
     function handleClick(e) {
         if(e.target.value === country) {
             setCount(count + 1)
+            document.getElementById(country).className = "btn btn-success btn-block"
+        } else {
+            document.getElementById(e.target.value).className = "btn btn-danger btn-block"
+            document.getElementById(country).className = "btn btn-success btn-block"
         }
         setDisabled(true)
     }
@@ -63,18 +73,24 @@ const Answers = ({ country, setCount, count, setup, times, setTimes }) => {
 
     return (
         <div>
-            <div>
-                <ul>
+                <ListGroup as="ul">
                     {data.length !== 0 && data.map((name, k) => 
-                        <li key={k}><button onClick={(e) => handleClick(e)} value={name} disabled={isDisabled}>{name}</button></li>
+                        <ListGroup.Item as="li" key={k}>
+                            <Button 
+                            block
+                            variant="secondary"
+                            id={name} 
+                            onClick={(e) => handleClick(e)} 
+                            value={name} 
+                            disabled={isDisabled}>{name}</Button>
+                        </ListGroup.Item>
                     )}
-                </ul>
-                <button disabled={!isDisabled} onClick={() => {
+                </ListGroup>
+                <button className="next" disabled={!isDisabled} onClick={() => {
                     setup()
                     setDisabled(false)
                     setTimes(times + 1)
                 }}>Next</button>
-            </div>
         </div>
     )
 }

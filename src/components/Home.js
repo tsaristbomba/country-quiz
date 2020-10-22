@@ -53,7 +53,7 @@ const Home = () => {
             
             res = await json
         } catch (err) {
-            //console.log(err)
+            console.log(err)
         }
 
         return res
@@ -106,7 +106,8 @@ const Home = () => {
             setTimes={setTimes}
             times={times} />}
             {finish && <div>
-                You got {count} Points!
+                You got {count} Points!<br />
+                <button className="next" onClick={() => window.location.reload()}>Try again</button>
                 </div>}
         </div>
     )

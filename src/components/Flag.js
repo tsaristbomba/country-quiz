@@ -6,14 +6,14 @@ const Flag = ({ countryFlag, loading, loadIcon }) => {
 
     return (
         <div>
-            <h3>
+            <h4>
             {
                 countryFlag !== null && !loading && <img className="flag" src={countryFlag} alt="" />
             } 
             {
                 !loading ? questions[1] : <img src={loadIcon} alt="loading" />
             }
-            </h3>
+            </h4>
         </div>
     )
 }

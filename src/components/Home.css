@@ -2,3 +2,23 @@
     width: 50px;
     padding: 5px;
 }
+
+.container {
+    width: 300px;
+
+}
+
+.next {
+    margin-top: 15px;
+    border: 0;
+    background-color: #107AB0;
+    padding: 6px 12px;
+    color: white;
+    border-radius: 6px;
+  font-family: Nunito;
+  cursor: pointer;
+}
+
+.next:hover {
+    background-color: #136791;
+}
